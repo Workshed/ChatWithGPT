@@ -1,0 +1,21 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "OK" : {
+
+    },
+    "WelcomeText" : {
+      "comment" : "Welcome string to include the AI name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to the chat. What would you like to ask the %@ AI?"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

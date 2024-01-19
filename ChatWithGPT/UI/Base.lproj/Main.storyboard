@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Introduction View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="IntroductionViewController" id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="ChatWithGPT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="coe-7f-0Q4">
+                                <rect key="frame" x="49" y="312.33333333333331" width="295" height="227.33333333333331"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dci-b9-AUU">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="112.66666666666667"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat to ChatGPT:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyy-5i-A7U">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="OpenAI API KEY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ug3-sb-TQ1">
+                                                <rect key="frame" x="0.0" y="32.333333333333371" width="295" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEj-9j-xCx">
+                                                <rect key="frame" x="0.0" y="78.333333333333371" width="295" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="ChatGPT"/>
+                                                <connections>
+                                                    <action selector="gptPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="z8C-LW-2jX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Btp-1P-hCl">
+                                        <rect key="frame" x="0.0" y="160.66666666666669" width="295" height="66.666666666666686"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat to a Dummy AI:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RU-Sg-F0d">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1f-GX-wkc">
+                                                <rect key="frame" x="0.0" y="32.333333333333314" width="295" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Dummy AI"/>
+                                                <connections>
+                                                    <action selector="dummyPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="kFS-Aj-PXx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="coe-7f-0Q4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="57l-gW-xDM"/>
+                            <constraint firstItem="coe-7f-0Q4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CNR-Qn-IpF"/>
+                            <constraint firstItem="coe-7f-0Q4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PKs-A4-4jq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="apiKeyTextField" destination="Ug3-sb-TQ1" id="6ei-vZ-5DB"/>
+                        <outlet property="gptButton" destination="TEj-9j-xCx" id="bux-LY-x7Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-63" y="25"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="FFK-Kn-IA7">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="AZI-FN-PPL" customClass="ChatViewController" customModule="ChatWithGPT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X0Y-1i-BsF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HBr-75-qvf">
+                                <rect key="frame" x="0.0" y="59" width="393" height="708.66666666666663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vur-Le-N7k">
+                                <rect key="frame" x="0.0" y="767.66666666666663" width="393" height="50.333333333333371"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukp-jq-Y5j">
+                                        <rect key="frame" x="8" y="8" width="377" height="34.333333333333336"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qs1-uT-pbb">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="34.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94a-Jh-ZYb">
+                                                <rect key="frame" x="288" y="0.0" width="89" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.up.circle.fill" catalog="system" title="Send"/>
+                                                <connections>
+                                                    <action selector="sendPressed" destination="AZI-FN-PPL" eventType="touchUpInside" id="XoK-PI-dGx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ukp-jq-Y5j" secondAttribute="bottom" constant="8" id="0ll-B0-7qX"/>
+                                    <constraint firstAttribute="trailing" secondItem="ukp-jq-Y5j" secondAttribute="trailing" constant="8" id="QOz-Xc-ZRn"/>
+                                    <constraint firstItem="ukp-jq-Y5j" firstAttribute="leading" secondItem="vur-Le-N7k" secondAttribute="leading" constant="8" id="bve-8g-YJw"/>
+                                    <constraint firstItem="ukp-jq-Y5j" firstAttribute="top" secondItem="vur-Le-N7k" secondAttribute="top" constant="8" id="dLS-sb-0yG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M3S-jf-sbG"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="vur-Le-N7k" firstAttribute="top" secondItem="HBr-75-qvf" secondAttribute="bottom" id="4Gp-Wt-z1X"/>
+                            <constraint firstItem="HBr-75-qvf" firstAttribute="leading" secondItem="M3S-jf-sbG" secondAttribute="leading" id="9Zn-Dv-ZCF"/>
+                            <constraint firstItem="vur-Le-N7k" firstAttribute="leading" secondItem="X0Y-1i-BsF" secondAttribute="leading" id="K0e-dK-8Q0"/>
+                            <constraint firstAttribute="trailing" secondItem="vur-Le-N7k" secondAttribute="trailing" id="de2-Yq-lyG"/>
+                            <constraint firstItem="M3S-jf-sbG" firstAttribute="bottom" secondItem="vur-Le-N7k" secondAttribute="bottom" id="q5L-st-vQJ"/>
+                            <constraint firstItem="HBr-75-qvf" firstAttribute="top" secondItem="M3S-jf-sbG" secondAttribute="top" id="t6U-xQ-PyT"/>
+                            <constraint firstItem="M3S-jf-sbG" firstAttribute="trailing" secondItem="HBr-75-qvf" secondAttribute="trailing" id="wnW-Mr-Osp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="q5L-st-vQJ" id="JfJ-Hl-yu6"/>
+                        <outlet property="messageTextField" destination="Qs1-uT-pbb" id="q1n-jN-wtw"/>
+                        <outlet property="sendButton" destination="94a-Jh-ZYb" id="Zin-WT-GNJ"/>
+                        <outlet property="tableView" destination="HBr-75-qvf" id="Sxq-uT-21e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bzz-BX-vQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677" y="25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.up.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
