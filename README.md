@@ -1,4 +1,7 @@
 # iOS MVVM-C Template Chat Project
+
+[![Build Status](https://app.bitrise.io/app/6be7685a-5eb9-40cb-93de-22b8b0d63fc5/status.svg?token=NLKz7ZG_hxrg10VYqvGc_Q&branch=master)](https://app.bitrise.io/app/6be7685a-5eb9-40cb-93de-22b8b0d63fc5)
+
 ## Overview
 This project serves as a template for building iOS applications with a chat style feature, using Swift with the Model-View-ViewModel-Coordinator (MVVM-C) architecture. The focus of this template is to strike a balance between simplicity and a clean separation of concerns, facilitating the rapid development of features with a structure that is straightforward to understand and test.
 
