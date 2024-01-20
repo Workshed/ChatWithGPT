@@ -11,12 +11,25 @@ class GPTNetworkManager: NetworkManager {
     
     private let session: NetworkSession
     private let apiKey: String
-
+    
+    /// Initialise with a sesion and an OpenAI API key. The session defaults to URLSession to allow for
+    /// normal use in app, or to specify one for use in unit tests.
+    ///
+    /// Please note that the API key is not validated and if correct the app will simply not work, likely
+    /// throwing a JSON decode exception.
+    ///
+    /// - Parameters:
+    ///   - session: The session to use, defaults to URLSession.
+    ///   - apiKey: OpenAI API key.
     init(session: NetworkSession = URLSession.shared, apiKey: String) {
         self.session = session
         self.apiKey = apiKey
     }
 
+
+    /// Send a history of chat messages to ChatGPT.
+    /// - Parameter messages: The message history to send, including the latest message (which has not been seen by GPT yet).
+    /// - Returns: The response to the last message.
     func sendMessages(messages: [Message]) async throws -> Message {
         let url = makeURL()
         var urlRequest = makeURLRequest(url, apiKey: apiKey)
