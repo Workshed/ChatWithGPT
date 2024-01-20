@@ -25,21 +25,21 @@ final class IntroductionViewModelTests: XCTestCase {
     func testUpdateButtonState_WithNonEmptyAPIKey() {
         let nonEmptyAPIKey = "12345"
 
-        viewModel.updateButtonState(with: nonEmptyAPIKey)
+        viewModel.update(apiKey: nonEmptyAPIKey)
 
         XCTAssertTrue(viewModel.isGPTButtonEnabled, "Button should be enabled for non-empty API key.")
         XCTAssertEqual(viewModel.apiKey, nonEmptyAPIKey, "API key should be updated with user-entered value.")
     }
 
     func testUpdateButtonState_WithEmptyAPIKey() {
-        viewModel.updateButtonState(with: "")
+        viewModel.update(apiKey: "")
 
         XCTAssertFalse(viewModel.isGPTButtonEnabled, "Button should be disabled for empty API key.")
         XCTAssertEqual(viewModel.apiKey, "", "API key should be updated to an empty string.")
     }
 
     func testUpdateButtonState_WithNilAPIKey() {
-        viewModel.updateButtonState(with: nil)
+        viewModel.update(apiKey: nil)
 
         XCTAssertFalse(viewModel.isGPTButtonEnabled, "Button should be disabled for nil API key.")
         XCTAssertNil(viewModel.apiKey, "API key should be nil.")

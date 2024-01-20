@@ -246,12 +246,12 @@ extension ChatViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
-        viewModel.updateButtonState(with: prospectiveText)
+        viewModel.update(messageText: prospectiveText)
         return true
     }
 
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        viewModel.updateButtonState(with: textField.text)
+        viewModel.update(messageText: textField.text)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -53,10 +53,10 @@ final class ChatViewModelTests: XCTestCase {
     }
 
     func testViewModel_UpdateButtonState() {
-        viewModel.updateButtonState(with: "Test")
+        viewModel.update(messageText: "Test")
         XCTAssertTrue(viewModel.isSendButtonEnabled, "isSendButtonEnabled should be true with non-empty text.")
 
-        viewModel.updateButtonState(with: "")
+        viewModel.update(messageText: "")
         XCTAssertFalse(viewModel.isSendButtonEnabled, "isSendButtonEnabled should be false with empty text.")
     }
 

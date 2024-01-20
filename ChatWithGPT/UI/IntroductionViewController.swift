@@ -66,11 +66,11 @@ extension IntroductionViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
-        viewModel.updateButtonState(with: prospectiveText)
+        viewModel.update(apiKey: prospectiveText)
         return true
     }
 
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        viewModel.updateButtonState(with: textField.text)
+        viewModel.update(apiKey: textField.text)
     }
 }
