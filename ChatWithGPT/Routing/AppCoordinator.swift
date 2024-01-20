@@ -8,11 +8,18 @@
 import UIKit
 
 class AppCoordinator: NSObject, Coordinator {
+
+    // MARK: - Public Properties
+
     var navigationController: UINavigationController
+
+    // MARK: - Init
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+
+    // MARK: - Public Properties
 
     func start() {
         let viewModel = IntroductionViewModel()
@@ -22,6 +29,8 @@ class AppCoordinator: NSObject, Coordinator {
 
         navigationController.pushViewController(vc, animated: true)
     }
+
+    // MARK: - Private Properties
 
     private func showChat(chatRepository: ChatRepository) {
         let viewModel = ChatViewModel(chatRepository: chatRepository)
@@ -35,6 +44,7 @@ class AppCoordinator: NSObject, Coordinator {
     }
 }
 
+// MARK: - IntroductionViewControllerCoordinator
 extension AppCoordinator: IntroductionViewControllerCoordinator {
     func showDummyChat() {
         showChat(chatRepository: DummyChatRepository())
@@ -47,6 +57,7 @@ extension AppCoordinator: IntroductionViewControllerCoordinator {
     }
 }
 
+// MARK: - ChatViewControllerCoordinator
 extension AppCoordinator: ChatViewControllerCoordinator {
     func showError(message: String, from viewController: UIViewController) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)

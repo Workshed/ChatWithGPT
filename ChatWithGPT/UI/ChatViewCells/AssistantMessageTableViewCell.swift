@@ -9,8 +9,12 @@ import UIKit
 
 class AssistantMessageTableViewCell: UITableViewCell, ReusableTableViewCell {
 
+    // MARK: - Private Properties
+
     @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var messageContainer: UIView!
+
+    // MARK: - Public Properties
 
     var viewModel: MessageViewModel? {
         didSet {
@@ -22,6 +26,8 @@ class AssistantMessageTableViewCell: UITableViewCell, ReusableTableViewCell {
             messageLabel.text = viewModel.messageText
         }
     }
+
+    // MARK: - Override
 
     override func awakeFromNib() {
         super.awakeFromNib()

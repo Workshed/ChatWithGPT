@@ -36,12 +36,16 @@ class ChatViewModel {
     @Published private(set) var isSendButtonEnabled: Bool = false
     @Published private(set) var errorMessage: String? 
 
+    // MARK: - Init
+
     init(chatRepository: ChatRepository) {
         self.chatRepository = chatRepository
         self.title = chatRepository.aiName
 
         loadMessagesFromRepository()
     }
+
+    // MARK: - Public Methods
 
     /// Used to update the message text in the ViewModel for validation.
     /// - Parameter text: The (unsent) message text
@@ -72,6 +76,8 @@ class ChatViewModel {
         }
         isLoading = false
     }
+
+    // MARK: - Private Methods
 
     /// Convert any existing messages in the repository in to MessageViewModels in our Publisher.
     private func loadMessagesFromRepository() {

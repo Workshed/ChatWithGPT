@@ -8,5 +8,8 @@
 import Foundation
 
 struct WelcomeViewModel {
+
+    // MARK: - Public Properties
+
     let titleText: String
 }

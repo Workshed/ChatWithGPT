@@ -9,7 +9,11 @@ import UIKit
 
 class WelcomeTableViewCell: UITableViewCell, ReusableTableViewCell {
 
+    // MARK: - Private Properties
+
     @IBOutlet private weak var welcomeLabel: UILabel!
+
+    // MARK: - Public Properties
 
     var viewModel: WelcomeViewModel? {
         didSet {

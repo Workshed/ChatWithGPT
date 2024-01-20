@@ -15,6 +15,8 @@ protocol IntroductionViewControllerCoordinator: NSObject {
 
 class IntroductionViewController: UIViewController, StoryboardViewController {
 
+    // MARK: - Private Properties
+
     @IBOutlet private weak var apiKeyTextField: UITextField!
     @IBOutlet private weak var gptButton: UIButton!
 
@@ -22,6 +24,8 @@ class IntroductionViewController: UIViewController, StoryboardViewController {
     private let coordinator: IntroductionViewControllerCoordinator
 
     private var cancellables = Set<AnyCancellable>()
+
+    // MARK: - Init
 
     init?(coder: NSCoder, viewModel: IntroductionViewModel, coordinator: IntroductionViewControllerCoordinator) {
         self.viewModel = viewModel
@@ -33,12 +37,16 @@ class IntroductionViewController: UIViewController, StoryboardViewController {
         fatalError("You must create this view controller with a ViewModel and Coordinator.")
     }
 
+    // MARK: - Overrides
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Choose your AI"
         setupTextField()
         setupObservers()
     }
+
+    // MARK: - Private Methods
 
     private func setupTextField() {
         apiKeyTextField.delegate = self

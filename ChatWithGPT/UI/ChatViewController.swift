@@ -15,6 +15,8 @@ protocol ChatViewControllerCoordinator: NSObject {
 
 class ChatViewController: UIViewController, StoryboardViewController {
 
+    // MARK: - Private Methods
+
     @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var messageTextField: UITextField!
@@ -27,6 +29,8 @@ class ChatViewController: UIViewController, StoryboardViewController {
     private let viewModel: ChatViewModel
     private let coordinator: ChatViewControllerCoordinator
 
+    // MARK: - Init
+
     init?(coder: NSCoder, viewModel: ChatViewModel, coordinator: ChatViewControllerCoordinator) {
         self.viewModel = viewModel
         self.coordinator = coordinator
@@ -36,6 +40,8 @@ class ChatViewController: UIViewController, StoryboardViewController {
     required init?(coder: NSCoder) {
         fatalError("You must create this view controller with a ViewModel and Coordinator.")
     }
+
+    // MARK: - Overrides
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +68,8 @@ class ChatViewController: UIViewController, StoryboardViewController {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
     }
+
+    // MARK: - Private Methods
 
     private func setupNavigationBar() {
         navigationController?.navigationBar.isTranslucent = true

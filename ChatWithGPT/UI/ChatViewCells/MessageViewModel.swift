@@ -12,6 +12,9 @@ enum MessageStatus: String {
 }
 
 struct MessageViewModel: Identifiable {
+
+    // MARK: - Public Properties
+
     let id = UUID()
     let messageText: String
     let role: Role
@@ -25,6 +28,8 @@ struct MessageViewModel: Identifiable {
             self.statusHidden = (status == .sent)
         }
     }
+
+    // MARK: - Init
 
     init(message: Message, status: MessageStatus = .sent) {
         self.messageText = message.content
