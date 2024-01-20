@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIView {
-
     static func animationOptionsForCurve(_ curve: UIView.AnimationCurve) -> UIView.AnimationOptions {
         switch curve {
         case .easeInOut:

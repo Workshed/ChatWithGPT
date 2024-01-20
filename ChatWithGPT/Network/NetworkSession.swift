@@ -12,6 +12,7 @@ protocol NetworkSession {
     func chatData(for request: URLRequest) async throws -> (Data, URLResponse)
 }
 
+// This is our "default" implementation
 extension URLSession: NetworkSession {
     func chatData(for request: URLRequest) async throws -> (Data, URLResponse) {
         return try await data(for: request)

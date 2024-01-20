@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// A mock UINavigationController which allows us to easily inspect the pushed or presented UIViewController.
 class MockNavigationController: UINavigationController {
     var mockPushedViewController: UIViewController?
     var mockPresentedViewController: UIViewController?

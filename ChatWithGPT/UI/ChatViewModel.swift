@@ -9,6 +9,9 @@ import Combine
 import Foundation
 
 class ChatViewModel {
+
+    // MARK: - Private Properties
+
     private let chatRepository: ChatRepository
 
     private var cancellables = Set<AnyCancellable>()
@@ -18,9 +21,14 @@ class ChatViewModel {
         return String(format: formatString, chatRepository.aiName)
     }
 
+    // MARK: - Public Properties
+
+    /// The welcome message to display to the user
     var welcomeMessageViewModel: WelcomeViewModel {
         WelcomeViewModel(titleText: welcomeText)
     }
+    
+    /// The title to display
     let title: String
 
     @Published private(set) var messages: [MessageViewModel] = []
@@ -35,10 +43,15 @@ class ChatViewModel {
         loadMessagesFromRepository()
     }
 
-    func updateButtonState(with text: String?) {
+    /// Used to update the message text in the ViewModel for validation.
+    /// - Parameter text: The (unsent) message text
+    func update(messageText text: String?) {
         isSendButtonEnabled = !(text?.isEmpty ?? true)
     }
 
+    /// Send the message text (note we could use the text from the `update(messageText)`
+    /// function should we wish)
+    /// - Parameter text: The message to send
     func send(text: String) async {
         isLoading = true
         let sendingMessage = MessageViewModel(message: Message(role: .user, content: text),
@@ -60,6 +73,7 @@ class ChatViewModel {
         isLoading = false
     }
 
+    /// Convert any existing messages in the repository in to MessageViewModels in our Publisher.
     private func loadMessagesFromRepository() {
         messages = chatRepository.messages.map({ message in
             MessageViewModel(message: message)
