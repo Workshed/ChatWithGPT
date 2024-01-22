@@ -102,6 +102,8 @@ class ChatViewController: UIViewController, StoryboardViewController {
 
     private func setupObservers() {
         viewModel.$messages.receive(on: RunLoop.main).sink(receiveValue: { [weak self] messages in
+            // We may want to do something nicer here than reload the whole table,
+            // this works for now.
             self?.tableView.reloadData()
             self?.scrollToNewestMessage()
         }).store(in: &cancellables)
